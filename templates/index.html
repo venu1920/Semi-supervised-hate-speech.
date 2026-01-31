@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hate Speech Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>COVID-19 Hate Speech Detection</h2>
+    <p>Semi-Supervised Machine Learning Approach</p>
+
+    <form method="post">
+        <textarea name="tweet" placeholder="Enter tweet text here..." required></textarea>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+        <div class="result {{ 'hate' if result == 'Hate Speech' else 'safe' }}">
+            Result: {{ result }}
+        </div>
+    {% endif %}
+
+    <div class="footer">
+        MINI PROJECT
+    </div>
+</div>
+
+</body>
+</html> 
